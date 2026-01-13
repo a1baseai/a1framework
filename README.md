@@ -76,18 +76,21 @@ Whether you're creating customer support bots, virtual assistants, or interactiv
    cp .env.example .env.local
    ```
 
-   Update `.env.local` with your credentials:
+   Edit `.env.local` and provide the values from your dashboards:
 
-   ```env
-   A1BASE_API_KEY=your_api_key            # From A1Base Dashboard 
-   A1BASE_API_SECRET=your_api_secret      # From A1Base Dashboard 
-   A1BASE_ACCOUNT_ID=your_account_id      # From A1Base Dashboard 
-   A1BASE_AGENT_NUMBER=your_agent_number  # From A1Base Dashboard 
-   A1BASE_AGENT_NAME=your_agent_name      # From A1Base Dashboard 
-   A1BASE_AGENT_EMAIL=email@a1send.com    # From A1Base Dashboard
-   OPENAI_API_KEY=your_openai_key         # From OpenAI Dashboard
-   CRON_SECRET=your_generated_secret      # Generate your own secure random string
-   ```
+   - `A1BASE_API_KEY` – your A1Base API key (**required**)
+   - `A1BASE_API_SECRET` – your A1Base API secret (**required**)
+   - `A1BASE_ACCOUNT_ID` – your A1Base account ID (**required**)
+   - `A1BASE_AGENT_NUMBER` – WhatsApp number connected to your agent (**required**)
+   - `A1BASE_AGENT_NAME` – display name for the agent (**optional**)
+   - `A1BASE_AGENT_EMAIL` – email address used when the agent sends emails (**required**)
+   - `OPENAI_API_KEY` – API key for OpenAI (**required**)
+   - `PERPLEXITY_API_KEY` – API key for Perplexity (**optional**)
+   - `CRON_SECRET` – secret token to secure the cron route (**optional**)
+   - `SUPABASE_URL` / `SUPABASE_KEY` – Supabase project credentials (**optional**)
+
+   If you enable Supabase, open the SQL editor in your Supabase project and run
+   the commands from `supabase.sql` to create the required tables.
 
 4. **Set up A1Base credentials**
    - Register at [A1Base Dashboard](https://dashboard.a1base.com)
